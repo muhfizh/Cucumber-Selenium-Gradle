@@ -35,7 +35,7 @@ jobs:
       
     # build gradle
     - name: Build with Gradle Wrapper
-      run: ./gradlew build
+      run: ./gradlew build --stacktrace
       
     # Execute gradle 
     - name: Execute Test
