@@ -24,11 +24,18 @@ jobs:
         
     # install chrome browser
     - name: Setup Chrome
-      uses: browser-actions/setup-chrome@v0.0.0
+      uses: browser-actions/setup-chrome@v1.7.2
+      with:
+        chrome-version: 127
+        install-chromedriver: true
       
     # setup graldew
-    - name: Setup gradlew
-      run: chmod +x gradlew 
+    - name: Setup Gradle 8.5
+      uses: gradle/actions/setup-gradle@v3
+      with:
+        gradle-version: 8.5
+    - name: Make gradlew executable
+      run: chmod +x ./gradlew
       
     # Execute gradle command for running cucumber test
     - name: Execute Test
