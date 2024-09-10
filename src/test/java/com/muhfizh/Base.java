@@ -8,12 +8,11 @@ public class Base {
     protected static WebDriver driver;
 
     protected void getDriver() {
-        System.setProperty ("webdriver.chrome.driver", "C:\\driver\\chromedriver.exe");
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm=usage");
-        options.addArguments("--remote-allow=origin=*");
+        //options.addArguments("--disable-dev-shm=usage");
+        //options.addArguments("--remote-allow=origin=*");
         options.addArguments("--window-size=1920,1080");
         driver = new ChromeDriver(options);
     }
