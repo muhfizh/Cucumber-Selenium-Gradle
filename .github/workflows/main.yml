@@ -24,10 +24,14 @@ jobs:
     # install chrome browser
     - name: Setup Chrome
       uses: browser-actions/setup-chrome@v0.0.0
-      
-    # setup graldew
-    - name: Setup gradlew
-      run: chmod +x gradlew 
+
+    # instal gradle
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
+
+    # build gradle
+    - name: Build with Gradle Wrapper
+      run: ./gradlew build
       
     # Execute gradle 
     - name: Execute Test
