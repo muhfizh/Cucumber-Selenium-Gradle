@@ -24,6 +24,10 @@ dependencies {
 
     implementation group: 'io.qameta.allure', name: 'allure-maven', version: '2.14.0'
 
+    testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '5.5.0'
+    testImplementation group: 'org.json', name: 'json', version: '20240303'
+    testImplementation group: 'io.rest-assured', name: 'json-schema-validator', version: '5.5.0'
+
 }
 
 test {
