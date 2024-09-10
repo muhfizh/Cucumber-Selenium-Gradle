@@ -15,10 +15,10 @@ jobs:
     - uses: actions/checkout@v3
 
     # setup java
-    - name: Set up JDK 17
+    - name: Set up JDK 18
       uses: actions/setup-java@v3
       with:
-        java-version: '17'
+        java-version: '18'
         distribution: 'temurin'
         
     # install chrome browser
@@ -31,7 +31,7 @@ jobs:
       
     # Execute gradle 
     - name: Execute Test
-      run: ./gradlew Cucumber
+      run: ./gradlew :test
 
     - name: Archive Test Result
       uses: actions/upload-artifact@v3.1.0
