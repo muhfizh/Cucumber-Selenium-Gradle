@@ -12,11 +12,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v3
+
     # setup java
-    - name: Set up JDK 17
+    - name: Set up JDK 18
       uses: actions/setup-java@v3
       with:
-        java-version: '17'
+        java-version: '18'
         distribution: 'temurin'
         
     # install chrome browser
@@ -27,15 +29,13 @@ jobs:
     - name: Setup gradlew
       run: chmod +x gradlew 
       
-    # Execute gradle command for running cucumber test
+    # Execute gradle 
     - name: Execute Test
       run: ./gradlew test
 
-    # Archive Test Result
     - name: Archive Test Result
       uses: actions/upload-artifact@v3.1.0
       if: always()
       with:
         name: Cucumber Report
         path: reports
-    
