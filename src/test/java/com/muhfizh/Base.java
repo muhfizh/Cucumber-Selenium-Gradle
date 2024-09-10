@@ -8,6 +8,7 @@ public class Base {
     protected static WebDriver driver;
 
     protected void getDriver() {
+        System.setProperty ("webdriver.chrome.driver", "C:\\driver\\chromedriver.exe");
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
