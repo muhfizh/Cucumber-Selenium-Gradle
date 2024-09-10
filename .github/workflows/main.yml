@@ -31,7 +31,7 @@ jobs:
       
     # Execute gradle 
     - name: Execute Test
-      run: ./gradlew test
+      run: ./gradlew clean test
 
     - name: Archive Test Result
       uses: actions/upload-artifact@v3.1.0
