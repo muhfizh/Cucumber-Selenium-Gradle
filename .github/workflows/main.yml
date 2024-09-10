@@ -23,7 +23,7 @@ jobs:
         
     # install chrome browser
     - name: Setup Chrome
-      uses: browser-actions/setup-chrome@v128.0.6613.120
+      uses: browser-actions/setup-chrome
       
     # setup graldew
     - name: Setup gradlew
